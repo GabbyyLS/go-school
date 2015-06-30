@@ -1,0 +1,46 @@
+// STEP 1 : Declare the type of the ENUM that you desire
+
+// for enums define a type of the enum that one want
+// we want days be of type int where int ranges from 1 to 7
+// Another reason is we want to be able to perform operations on Day
+// adding 1/2..7 or subtracting 1/2..7 from the variables of type Day
+
+type Day int
+
+// STEP 2. Declare the enum constant with a type and const values of the same type using iota
+
+// next we define the constants of type Day
+// we use iota to provide int values to each of the contant types
+const (
+	MONDAY Day = 1 + iota
+	TUESDAY
+	WEDNESDAY
+	THURSDAY
+	FRIDAY
+	SATURDAY
+	SUNDAY
+)
+
+//STEP 3. Next we declare a variable string var that could represent the strings for each one of the constant values
+
+// Enums should be able to printout as strings
+// so we declare the next best thing, a slice of strings
+// for eg. the string value will be used in the println
+var days = [...]string{
+	"MONDAY",
+	"TUESDAY",
+	"WEDNESDAY",
+	"THURSDAY",
+	"FRIDAY",
+	"SATURDAY",
+	"SUNDAY",
+}
+
+// STEP 4. We declare a String() function on the declared enum Type (Day) in our case. It will be helpful
+// in when we call fmt.Println() or string() methods in the Enum Type
+
+// String() function will return the english name
+// that we want out constant Day be recognized as
+func (day Day) String() string {
+	return days[day-1]
+}
