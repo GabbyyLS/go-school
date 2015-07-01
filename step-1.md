@@ -52,7 +52,7 @@
 
 * Предложить реализацию типа Stats, который будет содержать информацию, необходимую для вычисления рейтинга альбома,
 а также сам алгоритм вычисления этого рейтинга. Можно параллельно учитывать и голоса обычных слушателей,
-и голоса критиков -- как, например, это делается на Metacritic или Allmusic.
+и голоса критиков -- как, например, это делается на [Metacritic](http://www.metacritic.com/) или [Allmusic](http://www.allmusic.com/).
   * [пример шкал и названий категорий](http://www.metacritic.com/about-metascores)
   * [еще один пример логики вычисления рейтинга альбома](http://www.tunequest.org/in-search-of-a-definitive-album-rating-formula/20070314/)
   * обсуждения формулы, которая используется в IMDb для топ-250: [1](http://www.quora.com/How-is-a-Movies-weighted-rating-calculated-on-IMDb) и [2](http://math.stackexchange.com/questions/169032/understanding-the-imdb-weighted-rating-function-for-usage-on-my-own-website)
