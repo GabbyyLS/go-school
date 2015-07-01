@@ -17,7 +17,7 @@
       * func NewArtist(name string) *Artist (Создать новый ID, остальные поля инициализируются по умолчанию)
       * func (a *Artist) AddGenre(g Genre)
       * func (a *Artist) SetBorn(t time.Time)
-      * func (a *Artist) Validate() (Логику валидации придумайте сами)
+      * func (a *Artist) Validate() error (Логику валидации придумайте сами)
       * func (a *Artist) IsValid() bool (wrapper, который вызывает Validate())
   * Album
     * Поля:
@@ -29,7 +29,7 @@
       * func NewAlbum(title string) *Album (Создать новый ID, остальные поля инициализируются по умолчанию)
       * func (a *Album) AddGenre(g Genre)
       * func (a *Album) SetReleased(t time.Time)
-      * func (a *Album) Validate() (Логику валидации придумайте сами)
+      * func (a *Album) Validate() error (Логику валидации придумайте сами)
       * func (a *Album) IsValid() bool (wrapper, который вызывает Validate())
   * Track
     * Поля:
@@ -43,14 +43,21 @@
 	  * Artists      []bson.ObjectId
     * Методы:
       * func NewTrack(title string) *Track (Создать новый ID, остальные поля инициализируются по умолчанию)
-      * func (t *Track) SetRating()
       * func (t *Track) AddGenre(g Genre)
-      * func (t *Track) AddAlbum(album Album) (проверить Validate() у Album и задать только его ID)
-      * func (t *Track) AddArtist((artist Artist) (проверить Validate() у Artist и задать только его ID)
-      * func (t *Track) SetDuration()
+      * func (t *Track) AddAlbum(album *Album) error (проверить Validate() у Album и задать только его ID)
+      * func (t *Track) AddArtist(artist *Artist) error (проверить Validate() у Artist и задать только его ID)
       * func (t *Track) SetYearReleased(t time.Time)
-      * func (a *Track) Validate() (Логику валидации придумайте сами)
-      * func (a *Track) IsValid() bool (wrapper, который вызывает Validate())
+      * func (t *Track) Validate() error (Логику валидации придумайте сами)
+      * func (t *Track) IsValid() bool (wrapper, который вызывает Validate())
+
+* Предложить реализацию типа Stats, который будет содержать информацию, необходимую для вычисления рейтинга альбома,
+а также сам алгоритм вычисления этого рейтинга. Можно параллельно учитывать и голоса обычных слушателей,
+и голоса критиков -- как, например, это делается на Metacritic или Allmusic.
+  * [пример шкал и названий категорий](http://www.metacritic.com/about-metascores)
+  * [еще один пример логики вычисления рейтинга альбома]http://www.tunequest.org/in-search-of-a-definitive-album-rating-formula/20070314/
+  * обсуждения формулы, которая используется в IMDb для топ-250: [1](http://www.quora.com/How-is-a-Movies-weighted-rating-calculated-on-IMDb) и [2](http://math.stackexchange.com/questions/169032/understanding-the-imdb-weighted-rating-function-for-usage-on-my-own-website)
+
+* Также продумать логику валидации голосов
 
 * Пишем табличные тесты (table-driven tests) при помощи пакета testing в файле [artist_test.go](/musicstore/model/artist_test.go) ([см. пример](/musicstore/model/table_driven_ test_example))
 
