@@ -15,11 +15,10 @@
       * Born *time.Time
     * Методы:
       * func NewArtist(name string) *Artist (Создать новый ID, остальные поля инициализируются по умолчанию)
-      * func (a *Artist) Exists() bool
       * func (a *Artist) AddGenre(g Genre)
-      * func (a *Artist) SetBorn()
+      * func (a *Artist) SetBorn(t time.Time)
       * func (a *Artist) Validate() (Логику валидации придумайте сами)
-      * func (a *Artist) IsValid() bool
+      * func (a *Artist) IsValid() bool (wrapper, который вызывает Validate())
   * Album
     * Поля:
       * ID
@@ -28,11 +27,10 @@
       * Released
     * Методы:
       * func NewAlbum(title string) *Album (Создать новый ID, остальные поля инициализируются по умолчанию)
-      * func (a *Album) Exists() bool
       * func (a *Album) AddGenre(g Genre)
-      * func (a *Album) SetReleased()
+      * func (a *Album) SetReleased(t time.Time)
       * func (a *Album) Validate() (Логику валидации придумайте сами)
-      * func (a *Album) IsValid() bool
+      * func (a *Album) IsValid() bool (wrapper, который вызывает Validate())
   * Track
     * Поля:
       * ID
@@ -45,15 +43,14 @@
 	  * Artists      []bson.ObjectId
     * Методы:
       * func NewTrack(title string) *Track (Создать новый ID, остальные поля инициализируются по умолчанию)
-      * func (a *Track) Exists() bool
       * func (t *Track) SetRating()
       * func (t *Track) AddGenre(g Genre)
-      * func (t *Track) AddAlbum(id bson.ObjectId)
-      * func (t *Track) AddArtist(id bson.ObjectId)
+      * func (t *Track) AddAlbum(album Album) (проверить Validate() у Album и задать только его ID)
+      * func (t *Track) AddArtist((artist Artist) (проверить Validate() у Artist и задать только его ID)
       * func (t *Track) SetDuration()
-      * func (t *Track) SetYearReleased()
+      * func (t *Track) SetYearReleased(t time.Time)
       * func (a *Track) Validate() (Логику валидации придумайте сами)
-      * func (a *Track) IsValid() bool
+      * func (a *Track) IsValid() bool (wrapper, который вызывает Validate())
 
 * Пишем табличные тесты (table-driven tests) при помощи пакета testing в файле [artist_test.go](/musicstore/model/artist_test.go) ([см. пример](/musicstore/model/table_driven_ test_example))
 
