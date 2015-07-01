@@ -25,6 +25,7 @@
       * Title
       * Genres
       * Released
+      * Rating       uint
     * Методы:
       * func NewAlbum(title string) *Album (Создать новый ID, остальные поля инициализируются по умолчанию)
       * func (a *Album) AddGenre(g Genre)
@@ -38,7 +39,6 @@
 	  * Genres
 	  * YearReleased int
 	  * Duration     time.Duration
-	  * Rating       uint
 	  * Albums       []bson.ObjectId
 	  * Artists      []bson.ObjectId
     * Методы:
@@ -54,7 +54,7 @@
 а также сам алгоритм вычисления этого рейтинга. Можно параллельно учитывать и голоса обычных слушателей,
 и голоса критиков -- как, например, это делается на Metacritic или Allmusic.
   * [пример шкал и названий категорий](http://www.metacritic.com/about-metascores)
-  * [еще один пример логики вычисления рейтинга альбома]http://www.tunequest.org/in-search-of-a-definitive-album-rating-formula/20070314/
+  * [еще один пример логики вычисления рейтинга альбома](http://www.tunequest.org/in-search-of-a-definitive-album-rating-formula/20070314/)
   * обсуждения формулы, которая используется в IMDb для топ-250: [1](http://www.quora.com/How-is-a-Movies-weighted-rating-calculated-on-IMDb) и [2](http://math.stackexchange.com/questions/169032/understanding-the-imdb-weighted-rating-function-for-usage-on-my-own-website)
 
 * Также продумать логику валидации голосов
