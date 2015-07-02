@@ -2,7 +2,7 @@
 
 ## Model
 
-* Начинаем работу с файла [artist.go](/musicstore/model/artist.go). Выполнить go get gopkg.in/mgo.v2, чтобы import нашел "gopkg.in/mgo.v2/bson"
+* Начинаем работу с файла [artist.go](/musicstore/model/artist.go). Выполнить `go get gopkg.in/mgo.v2`, чтобы import нашел "gopkg.in/mgo.v2/bson"
 
 * Нужно  создать 4 типа:
   * Genre - это  enums c жанрами музыки ([см. пример](/musicstore/model/enum_example))
