@@ -25,10 +25,11 @@
 
 * Переходим в go-school/musicstore/store/mongo
   * **(работа с файлами .json - запись/считывание информации?)**
-  * Нам понадобится драйвер для работы с mongoDB -- выполнить `go get gopkg.in/mgo.v2`. Примеры работы с mgo: [1](https://gist.github.com/border/3489566), [2](http://labix.org/mgo). [Документация](http://godoc.org/labix.org/v2/mgo)
+  * Нам понадобится драйвер для работы с mongoDB -- выполнить `go get gopkg.in/mgo.v2`. [Документация](http://godoc.org/labix.org/v2/mgo) и примеры работы с mgo: [1](https://gist.github.com/border/3489566), [2](http://labix.org/mgo).
   * В качестве url в Dial использовать "mongodb://localhost" или "127.0.0.1"
   * В файле artist.go (не забыть импортировать в него go-school/musicstore/model/artist) создаем тип artistStore, реализующий интерфейс Store, т.е. имеющий реализованные методы с необходимыми сигнатурами (например, GetArtistByName(name string) (*model.Artist, error) и т.д.). CreateArtist -- это wrapper, внутри которого мы используем Insert из mgo, внутри GetArtistById -- FindId и т.д.
   * Создать artist_test.go, в котором протестировать созданные CRUD-методы
+  * То же самое сделать для album.go и track.go
 
 
 
