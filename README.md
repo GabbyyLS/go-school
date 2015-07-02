@@ -8,5 +8,5 @@
 
 ### Learn
 * [Step 1. Model](/step-1.md)
- 
+* [Step 2. Store](/step-2.md)
 

@@ -5,4 +5,9 @@ import (
 	"time"
 )
 
-// TODO: Ни в чем себе не отказывайте :)
+type Artist struct {
+	ID     bson.ObjectId `json:"id" bson:"_id"`
+	Name   string        `json:"name"`
+	Genres []Genre       `json:"genres"`
+	Born   *time.Time    `json:"born"`
+}
