@@ -8,5 +8,6 @@
 
 ### Learn
 * [Step 1. Model](/step-1.md)
+* [Step 2. Store](https://github.com/GabbyyLS/go-school/blob/step-2/step-2.md)
  
 
