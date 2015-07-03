@@ -9,7 +9,7 @@
 
 * Там же: прописать все функции (см. приведенный пример) ~~-- они понадобятся нам позже, когда мы будем работать с handler'ами~~
   * Выполнить `go get golang.org/x/net/context`
-  * В [context.go](/musicstore/store/context.go) реализуем функцию FromContext(ctx context.Context) Store, которая возвращает Store из контекста (см. [документацию к net/context](https://godoc.org/golang.org/x/net/context)).
+  * В [context.go](/musicstore/store/context.go) реализуем функцию FromContext(ctx context.Context) Store, которая возвращает Store из контекста (см. [документацию к net/context](https://godoc.org/golang.org/x/net/context)). Также может быть полезна [эта статья](http://blog.denevell.org/golang-interface-type-assertions-switch.html) про интерфейсы и type assertions
 
 * Переходим в go-school/musicstore/store/mocks, где уже лежит сгенерированный ранее Store.go
   * Добавить artist.go, album.go и track.go и в них реализовать методы, создающие mock-объекты для различных сценариев (например, исполнителя с пустым/несуществующим/рабочим ID и т.д.)
