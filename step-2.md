@@ -3,7 +3,7 @@
 ## Store
 
 * В [store.go](/musicstore/store/store.go) создаем интерфейс Store, который будет реализован при помощи Mongo DB и mock-объекта. Далее:
-  * Выполнить `go get github.com/vektra/mockery`, затем `GOPATH/bin/mockery`
+  * Выполнить `go get github.com/vektra/mockery`, затем `$GOPATH/bin/mockery`
   * Перейти в go-school/musicstore/store и выполнить `mockery -all` (mockery генерирует mock-объекты для интерфейсов)
   * В результате в go-school/musicstore/store/mocks должен появиться Store.go, в котором сгенерированный mock-объект реализует наш интерфейс.
 
