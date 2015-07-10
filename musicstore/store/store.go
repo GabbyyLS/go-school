@@ -34,7 +34,7 @@ type Store interface {
 
 // Пример:
 func GetArtistByName(ctx context.Context, name string) (*model.Artist, error) {
-	FromContext(ctx).GetArtistByName(name)
+	return FromContext(ctx).GetArtistByName(name)
 }
 
 // TODO: Прописать все остальные функции
